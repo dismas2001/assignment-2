@@ -1,0 +1,17 @@
+import joblib
+model = joblib.load('accident_severity_model.pkl')
+location = 3  # Hypothetical location code
+weather_conditions = 2  # Hypothetical weather conditions code
+road_conditions = 1  # Hypothetical road conditions code
+vehicle_type = 1  # Hypothetical vehicle type code
+speed = 60  # Hypothetical speed in km/h
+independent_variables = [[location, weather_conditions, road_conditions, vehicle_type, speed]]
+predicted_severity = model.predict(independent_variables)
+print("Hypothetical Independent Variables:")
+print(f"Location: {location}")
+print(f"Weather Conditions: {weather_conditions}")
+print(f"Road Conditions: {road_conditions}")
+print(f"Vehicle Type: {vehicle_type}")
+print(f"Speed: {speed}")
+print("\nPredicted Accident Severity:")
+print(f"Severity Level (Hypothetical Data): {predicted_severity[0]:.2f}")
